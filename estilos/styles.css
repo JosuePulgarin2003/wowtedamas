@@ -1,0 +1,297 @@
+/* ==== ESTILOS BASE ==== */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background-color: #004080;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Menú hamburguesa: botón */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+
+.menu-toggle:focus {
+  outline: none;
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animación botón hamburguesa a "X" */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Nav normal */
+nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #ff5722;
+}
+
+/* Slider */
+.slider-section {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+/* Sección quienes somos */
+.quienes-somos {
+  padding: 30px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.titulo-principal {
+  text-align: center;
+  color: #004080;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.subtitulo-izquierda {
+  color: #ff5722;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Planes */
+.planes-section {
+  background-color: #ff5722;
+  color: white;
+  padding: 30px 20px;
+}
+
+.planes-container {
+  display: flex;
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.plan {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  flex: 1 1 250px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 255, 0.6);
+  animation: blueGlow 0.9s ease-in-out infinite alternate;
+}
+
+/* Animación de luz azul parpadeante */
+@keyframes blueGlow {
+  0% {
+    box-shadow: 0 0 8px 2px rgba(0, 0, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 15px 5px rgba(0, 0, 255, 0.9);
+  }
+}
+
+/* Cobertura, Soporte, Contacto */
+.cobertura-section,
+.soporte-section,
+.contacto-section {
+  padding: 30px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Footer */
+footer {
+  background-color: #004080;
+  color: white;
+  padding: 20px 20px 10px;
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-section h4 {
+  margin-top: 0;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* ==== ANIMACIONES ==== */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-section a i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-section a:hover i {
+  transform: scale(1.2);
+  color: tomato;
+}
+
+/* ==== RESPONSIVE ==== */
+
+@media (max-width: 768px) {
+  /* Mostrar botón hamburguesa */
+  .menu-toggle {
+    display: flex;
+  }
+  nav {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background-color: #004080;
+    width: 200px;
+    height: calc(100% - 60px);
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    padding-top: 20px;
+    gap: 20px;
+    z-index: 1050;
+  }
+  nav.open {
+    transform: translateX(0);
+  }
+  nav a {
+    margin: 0;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #ff5722;
+  }
+  header {
+    flex-wrap: nowrap;
+  }
+  .planes-container {
+    flex-direction: column;
+  }
+  .plan {
+    flex: 1 1 100%;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-section {
+    text-align: center;
+    width: 100%;
+  }
+  .slider-section {
+    height: 200px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  nav a {
+    flex: 1 1 calc(33% - 10px);
+    text-align: center;
+  }
+  .planes-container {
+    gap: 15px;
+  }
+}
