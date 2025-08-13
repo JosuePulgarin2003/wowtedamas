@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   setInterval(nextSlide, 5000); // Cambia de imagen cada 5 segundos
-
   showSlide(currentIndex);
 
   // Animación fade-in al hacer scroll y al cargar
@@ -44,3 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', checkFade);
   checkFade(); // Para que se active al cargar la página también
 });
+
+function toggleProvincias(regionId) {
+  const listas = document.querySelectorAll('.provincias-list');
+  listas.forEach(lista => {
+    if (lista.id !== regionId) {
+      lista.classList.remove('visible');
+    }
+  });
+
+  const listaSeleccionada = document.getElementById(regionId);
+  listaSeleccionada.classList.toggle('visible');
+}

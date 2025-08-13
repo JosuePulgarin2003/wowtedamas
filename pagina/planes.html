@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Planes WOW - Internet Futurista</title>
+  <link rel="stylesheet" href="../estilos/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script defer src="../funciones/main.js"></script>
+  <script defer src="../animaciones/animaciones.js"></script>
+</head>
+<body>
+  <header>
+    <h1>WOW</h1>
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav>
+      <a href="wowtedamas.html">Inicio</a>
+      <a href="planes.html">Planes</a>
+      <a href="#cobertura">Cobertura</a>
+      <a href="#soporte">Soporte</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#promociones">Promociones</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="regiones" class="regiones-section fade-in">
+      <h2 class="titulo-principal">De dónde nos ves</h2>
+      <div class="regiones-container">
+        <!-- Costa -->
+        <div class="region" onclick="toggleProvincias('costa')">
+          <img src="../fotos/costa.png" alt="Costa" class="region-img" />
+          <h3 class="regiones">Costa</h3>
+        </div>
+        <div id="costa" class="provincias-list">
+          <ul>
+            <li>Guayas</li>
+            <li>Manabí</li>
+            <li>El Oro</li>
+            <li>Esmeraldas</li>
+            <li>Los Ríos</li>
+            <li>Santa Elena</li>
+          </ul>
+        </div>
+
+        <!-- Sierra -->
+        <div class="region" onclick="toggleProvincias('sierra')">
+          <img src="../fotos/sierra.png" alt="Sierra" class="region-img" />
+          <h3 class="regiones">Sierra</h3>
+        </div>
+        <div id="sierra" class="provincias-list">
+          <ul>
+            <li>Pichincha</li>
+            <li>Imbabura</li>
+            <li>Carchi</li>
+            <li>Cotopaxi</li>
+            <li>Tungurahua</li>
+            <li>Azuay</li>
+            <li>Loja</li>
+          </ul>
+        </div>
+
+        <!-- Oriente -->
+        <div class="region" onclick="toggleProvincias('oriente')">
+          <img src="../fotos/oriente.png" alt="Oriente" class="region-img" />
+          <h3 class="regiones">Oriente</h3>
+        </div>
+        <div id="oriente" class="provincias-list">
+          <ul>
+            <li>Napo</li>
+            <li>Orellana</li>
+            <li>Pastaza</li>
+            <li>Morona Santiago</li>
+            <li>Sucumbíos</li>
+            <li>Zamora-Chinchipe</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section redes-sociales">
+        <h4>Redes Sociales</h4>
+        <a href="https://facebook.com/wow" target="_blank"><i class="fab fa-facebook-square"></i> Facebook</a>
+        <a href="https://instagram.com/wow" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://twitter.com/wow" target="_blank"><i class="fab fa-twitter-square"></i> Twitter</a>
+      </div>
+      <div class="footer-section correo">
+        <h4>Correo Electrónico</h4>
+        <a href="mailto:contacto@wow.com">contacto@wow.com</a>
+      </div>
+      <div class="footer-section contacto-general">
+        <h4>Contacto General</h4>
+        <p>Teléfono: +593 99 123 4567</p>
+        <p>Dirección: Av. Futuro 123, Ciudad WOW</p>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 WOW Internet. Todos los derechos reservados.</div>
+  </footer>
+</body>
+</html>
