@@ -6,8 +6,14 @@
   <title>Planes WOW - Internet Futurista</title>
   <link rel="stylesheet" href="../estilos/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  
   <script defer src="../funciones/main.js"></script>
   <script defer src="../animaciones/animaciones.js"></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
   <header>
@@ -38,12 +44,12 @@
         </div>
         <div id="costa" class="provincias-list">
           <ul>
-            <li>Guayas</li>
-            <li>Manabí</li>
-            <li>El Oro</li>
-            <li>Esmeraldas</li>
-            <li>Los Ríos</li>
-            <li>Santa Elena</li>
+            <li><a href="#" onclick="moverMapa(-2.170998, -79.922359, 'Guayas')">Guayas</a></li>
+            <li><a href="#" onclick="moverMapa(-0.967653, -80.708910, 'Manabí')">Manabí</a></li>
+            <li><a href="#" onclick="moverMapa(-3.258111, -79.955391, 'El Oro')">El Oro</a></li>
+            <li><a href="#" onclick="moverMapa(0.9592, -79.6533, 'Esmeraldas')">Esmeraldas</a></li>
+            <li><a href="#" onclick="moverMapa(-1.7901, -79.5342, 'Los Ríos')">Los Ríos</a></li>
+            <li><a href="#" onclick="moverMapa(-2.2263, -80.8580, 'Santa Elena')">Santa Elena</a></li>
           </ul>
         </div>
 
@@ -54,14 +60,13 @@
         </div>
         <div id="sierra" class="provincias-list">
           <ul>
-            <li>Pichincha</li>
-            <li>Imbabura</li>
-            <li>Carchi</li>
-            <li>Cotopaxi</li>
-            <li>Tungurahua</li>
-            <li>Azuay</li>
-            <li>Loja</li>
-            <li>Loja</li>
+            <li><a href="#" onclick="moverMapa(-0.180653, -78.467838, 'Pichincha')">Pichincha</a></li>
+            <li><a href="#" onclick="moverMapa(0.3517, -78.1223, 'Imbabura')">Imbabura</a></li>
+            <li><a href="#" onclick="moverMapa(0.8139, -77.7180, 'Carchi')">Carchi</a></li>
+            <li><a href="#" onclick="moverMapa(-0.9333, -78.6167, 'Cotopaxi')">Cotopaxi</a></li>
+            <li><a href="#" onclick="moverMapa(-1.2591, -78.6167, 'Tungurahua')">Tungurahua</a></li>
+            <li><a href="#" onclick="moverMapa(-2.9006, -79.0045, 'Azuay')">Azuay</a></li>
+            <li><a href="#" onclick="moverMapa(-4.0079, -79.2113, 'Loja')">Loja</a></li>
           </ul>
         </div>
 
@@ -72,19 +77,24 @@
         </div>
         <div id="oriente" class="provincias-list">
           <ul>
-            <li>Napo</li>
-            <li>Orellana</li>
-            <li>Pastaza</li>
-            <li>Morona Santiago</li>
-            <li>Sucumbíos</li>
-            <li>Zamora-Chinchipe</li>
+            <li><a href="#" onclick="moverMapa(-0.9891, -77.8120, 'Napo')">Napo</a></li>
+            <li><a href="#" onclick="moverMapa(-0.4667, -76.9667, 'Orellana')">Orellana</a></li>
+            <li><a href="#" onclick="moverMapa(-1.8167, -77.9900, 'Pastaza')">Pastaza</a></li>
+            <li><a href="#" onclick="moverMapa(-2.2167, -78.1167, 'Morona Santiago')">Morona Santiago</a></li>
+            <li><a href="#" onclick="moverMapa(0.0833, -76.8833, 'Sucumbíos')">Sucumbíos</a></li>
+            <li><a href="#" onclick="moverMapa(-4.0667, -78.9500, 'Zamora-Chinchipe')">Zamora-Chinchipe</a></li>
           </ul>
         </div>
       </div>
     </section>
+
+    <!-- Mapa -->
+    <section id="mapa">
+      <h2>Ubicación en el mapa</h2>
+      <div id="map"></div>
+    </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-content">
       <div class="footer-section redes-sociales">
@@ -105,5 +115,31 @@
     </div>
     <div class="footer-bottom">&copy; 2025 WOW Internet. Todos los derechos reservados.</div>
   </footer>
+
+  <!-- Script para inicializar el mapa -->
+ <script>
+  var map = L.map('map').setView([-0.180653, -78.467838], 7); // Vista general en Ecuador
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  var marker; // marcador global
+
+  function moverMapa(lat, lng, nombre) {
+    if (marker) {
+      map.removeLayer(marker);
+    }
+    map.setView([lat, lng], 10); // centrar en provincia
+    marker = L.marker([lat, lng]).addTo(map)
+      .bindPopup("<b>" + nombre + "</b><br>Provincia de " + nombre)
+      .openPopup();
+
+    // 👇 Esto hace que la página se desplace hasta el mapa automáticamente
+    document.getElementById("map").scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+
 </body>
 </html>
