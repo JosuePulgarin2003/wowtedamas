@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WOW - Contactos</title>
+  <link rel="stylesheet" href="../estilos/styles.css" />
+  <link rel="stylesheet" href="../estilos/contactos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <script defer src="../funciones/main.js"></script>
+  <script defer src="../animaciones/animaciones.js"></script>
+
+</head>
+<body>
+  <header>
+    <h1>WOW</h1>
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="planes.html">Planes</a>
+      <a href="cobertura.html">Cobertura</a>
+      <a href="contactos.html" class="active">Contacto</a>
+      <a href="promociones.html">Promociones</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Carrusel -->
+    <section class="carousel">
+      <div class="carousel-images">
+        <img src="../fotos/contacto1.jpg" alt="Atención al cliente">
+        <img src="../fotos/contacto2.jpg" alt="Soporte técnico">
+        <img src="../fotos/contacto3.jpg" alt="Comunicación directa">
+      </div>
+    </section>
+
+    <!-- Introducción -->
+    <section class="intro-section">
+      <h2>Estamos para ayudarte</h2>
+      <p>En WOW creemos que la comunicación directa es clave. 
+         Contáctanos a través de nuestros canales oficiales, ¡te atenderemos con gusto!</p>
+    </section>
+
+    <!-- Contactos -->
+    <section class="contactos-container">
+      <div class="contact-card">
+        <i class="fab fa-whatsapp"></i>
+        <h3>WhatsApp</h3>
+        <p>Chatea con nuestro equipo en tiempo real.</p>
+        <a class="whatsapp-btn" href="https://wa.me/593991234567" target="_blank">Abrir WhatsApp</a>
+      </div>
+
+      <div class="contact-card">
+        <i class="fas fa-phone"></i>
+        <h3>Teléfono</h3>
+        <p>+593 99 123 4567</p>
+      </div>
+
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Correo Electrónico</h3>
+        <p><a href="mailto:contacto@wow.com">contacto@wow.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section redes-sociales">
+        <h4>Redes Sociales</h4>
+        <a href="#"><i class="fab fa-facebook-square"></i> Facebook</a>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
+      </div>
+      <div class="footer-section correo">
+        <h4>Correo Electrónico</h4>
+        <a href="mailto:contacto@wow.com">contacto@wow.com</a>
+      </div>
+      <div class="footer-section contacto-general">
+        <h4>Contacto General</h4>
+        <p>Teléfono: +593 99 123 4567</p>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 WOW Internet. Todos los derechos reservados.</div>
+  </footer>
+
+  <script>
+    // Carrusel automático
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".carousel-images img");
+    function moveSlide(step) {
+      currentIndex = (currentIndex + step + slides.length) % slides.length;
+      document.querySelector(".carousel-images").style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+    setInterval(() => moveSlide(1), 5000);
+  </script>
+</body>
+</html>

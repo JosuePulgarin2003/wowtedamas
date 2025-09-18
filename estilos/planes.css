@@ -1,0 +1,146 @@
+/* ===========================
+   Carrusel tamaño moderado
+=========================== */
+.slider-section .slider {
+  height: 400px;
+  max-width: 900px;
+  margin: 20px auto 5px; /* menos espacio debajo */
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* ✅ sombra elegante */
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+/* ===========================
+   Introducción (título + párrafo)
+=========================== */
+.planes-intro {
+  text-align: center;
+  padding: 5px 20px 15px;
+  margin-top: -300px; /* acercar al carrusel */
+}
+
+.planes-intro h2 {
+  font-size: 3rem;
+  margin-bottom: 5px;
+  color: #004080; /* Azul */
+}
+
+.planes-intro p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* ===========================
+   Regiones (contenedor + tarjeta)
+=========================== */
+.regiones-container {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+
+.region-card {
+  flex: 0 0 auto; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.region {
+  flex: 0 0 120px;
+  height: 142px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 15px;
+  background-color: #004080;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.region:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.region-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* ===========================
+   Provincias (lista + burbujas)
+=========================== */
+.provincias-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+
+.provincias-list.visible {
+  max-height: 400px;
+  opacity: 1;
+}
+
+.provincia-bubble {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  padding: 8px 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.provincia-bubble:hover {
+  background: #25D366; /* verde de WhatsApp */
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+.provincia-bubble i {
+  color: #25D366;
+  font-size: 1.2rem;
+}
+
+.provincia-bubble:hover i {
+  color: #fff;
+}
