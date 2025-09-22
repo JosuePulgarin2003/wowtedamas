@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WOW - Internet Futurista</title>
+  <title>WOW Internet</title>
   <link rel="stylesheet" href="../estilos/styles.css" />
+  <link rel="stylesheet" href="../estilos/index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script defer src="../funciones/main.js"></script>
   <script defer src="../animaciones/animaciones.js"></script>
 </head>
 <body>
+  <!-- Header / Navbar -->
   <header>
     <h1>WOW</h1>
     <button class="menu-toggle" aria-label="Abrir menú">
@@ -27,76 +29,107 @@
   </header>
 
   <main>
-    <!-- Slider -->
-    <section class="slider-section">
-      <div class="slider">
-        <img src="../fotos/publicidad1.jpg" alt="Publicidad WOW 1" class="slide active" />
-        <img src="../fotos/publicidad2.jpg" alt="Publicidad WOW 2" class="slide" />
-        <img src="../fotos/publicidad3.jpg" alt="Publicidad WOW 3" class="slide" />
+    <!-- Carrusel -->
+    <section class="carousel">
+      <div class="carousel-images">
+        <img src="../fotos/carrusel1.jpg" alt="Imagen 1">
+        <img src="../fotos/carrusel2.jpg" alt="Imagen 2">
+        <img src="../fotos/carrusel3.jpg" alt="Imagen 3">
       </div>
     </section>
 
-    <!-- Quiénes somos -->
+    <!-- Sección Quiénes Somos -->
     <section class="quienes-somos fade-in">
-      <h1 class="titulo-principal">Conéctate al futuro con WOW</h1>
-      <h3 class="subtitulo-izquierda">Quiénes somos</h3>
-      <p>
-        Somos una empresa dedicada a ofrecer el mejor servicio de internet con la más alta velocidad y estabilidad para todos nuestros clientes. Nuestro compromiso es mantenerte siempre conectado y satisfecho.
-      </p>
+      <h2 class="titulo-principal">Quiénes Somos</h2>
+      <p>En WOW nos enfocamos en ofrecer la mejor tecnología de internet en Ecuador. Nuestro compromiso es brindar velocidad, estabilidad y un servicio confiable para hogares y empresas.</p>
     </section>
 
-    <!-- Planes destacados -->
-    <section id="planes" class="planes-section fade-in">
-      <h2>Nuestros Planes</h2>
+    <!-- Sección Planes -->
+    <section class="planes-section fade-in">
+      <h2 class="titulo-principal">Nuestros Planes</h2>
       <div class="planes-container">
-        <article class="plan">
+        <div class="plan">
           <h3>Plan Básico</h3>
-          <p>Ideal para navegación y redes sociales.</p>
-          <ul>
-            <li>Velocidad: 20 Mbps</li>
-            <li>Sin límite de datos</li>
-            <li>Soporte 24/7</li>
-          </ul>
-        </article>
-        <article class="plan">
+          <p>Internet rápido para uso doméstico básico. Ideal para navegar y redes sociales.</p>
+        </div>
+        <div class="plan">
           <h3>Plan Avanzado</h3>
-          <p>Perfecto para streaming y trabajo remoto.</p>
-          <ul>
-            <li>Velocidad: 50 Mbps</li>
-            <li>Sin límite de datos</li>
-            <li>Soporte 24/7</li>
-          </ul>
-        </article>
-        <article class="plan">
+          <p>Mayor velocidad para streaming, videojuegos y teletrabajo sin interrupciones.</p>
+        </div>
+        <div class="plan">
           <h3>Plan Premium</h3>
-          <p>Para usuarios exigentes y gaming online.</p>
-          <ul>
-            <li>Velocidad: 100 Mbps</li>
-            <li>Sin límite de datos</li>
-            <li>Soporte prioritario</li>
-          </ul>
-        </article>
+          <p>Velocidad máxima y soporte prioritario para empresas y usuarios exigentes.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Cobertura -->
-    <section id="cobertura" class="cobertura-section fade-in">
-      <h2>Cobertura</h2>
-      <p>Ofrecemos servicio en las siguientes zonas: Ciudad Central, Zona Norte, Zona Sur y área metropolitana.</p>
-      <p>Estamos en constante expansión para llegar a más hogares y empresas.</p>
+    <!-- Sección Promociones -->
+    <section class="promo-intro fade-in">
+      <h2>Promociones Especiales</h2>
+      <p>Aprovecha nuestras ofertas exclusivas y mejora tu experiencia de conexión.</p>
+      <div class="promo-grid">
+        <div class="promo-card">
+          <i class="fas fa-gift"></i>
+          <h3>50% de Descuento</h3>
+          <p>En tu primer mes de servicio al contratar cualquier plan.</p>
+          <a href="#" class="promo-btn">Ver más</a>
+        </div>
+        <div class="promo-card">
+          <i class="fas fa-wifi"></i>
+          <h3>Instalación Gratis</h3>
+          <p>Sin costo adicional al contratar el plan Premium durante este mes.</p>
+          <a href="#" class="promo-btn">Ver más</a>
+        </div>
+        <div class="promo-card">
+          <i class="fas fa-gift"></i>
+          <h3>2 Meses Gratis</h3>
+          <p>Al contratar el Plan Avanzado por 12 meses.</p>
+          <a href="#" class="promo-btn">Ver más</a>
+        </div>
+        <div class="promo-card">
+          <i class="fas fa-router fa-2x"></i>
+          <h3>Router de Regalo</h3>
+          <p>Obtén un router de última generación al contratar cualquier plan.</p>
+          <a href="#" class="promo-btn">Ver más</a>
+        </div>
+        <div class="promo-card">
+          <i class="fas fa-percent"></i>
+          <h3>Descuento Estudiantil</h3>
+          <p>20% de descuento para estudiantes en todos los planes.</p>
+          <a href="#" class="promo-btn">Ver más</a>
+        </div>
+      </div>
     </section>
 
-    <!-- Soporte -->
-    <section id="soporte" class="soporte-section fade-in">
-      <h2>Soporte</h2>
-      <p>¿Tienes dudas? Consulta nuestras preguntas frecuentes y guías para resolver problemas comunes.</p>
+    <!-- Sección La Mejor Opción en Internet -->
+    <section class="mejor-opcion fade-in">
+      <h2>La Mejor Opción en Internet</h2>
+      <p>Elegir WOW no es solo contratar un servicio, es garantizar la mejor experiencia de internet en Ecuador. Nuestra infraestructura avanzada, atención personalizada y planes competitivos nos colocan por encima de otros proveedores.</p>
+
+      <div class="beneficios-container">
+        <div class="beneficio">
+          <i class="fas fa-tachometer-alt fa-2x"></i>
+          <h3>Velocidad Inigualable</h3>
+          <p>Navega, transmite y juega sin interrupciones gracias a nuestras conexiones ultrarrápidas.</p>
+        </div>
+        <div class="beneficio">
+          <i class="fas fa-shield-alt fa-2x"></i>
+          <h3>Seguridad y Confiabilidad</h3>
+          <p>Mantenemos tu conexión estable y segura, protegiendo tus datos y tu navegación.</p>
+        </div>
+        <div class="beneficio">
+          <i class="fas fa-users fa-2x"></i>
+          <h3>Soporte Premium</h3>
+          <p>Atención rápida y personalizada para resolver cualquier inconveniente con eficiencia.</p>
+        </div>
+        <div class="beneficio">
+          <i class="fas fa-dollar-sign fa-2x"></i>
+          <h3>Planes Competitivos</h3>
+          <p>Precios justos y paquetes diseñados para todo tipo de usuarios y empresas.</p>
+        </div>
+      </div>
     </section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="contacto-section fade-in">
-      <h2>Contacto</h2>
-      <p>Muy pronto podrás contactarnos mediante nuestro formulario y otros medios.</p>
-    </section>
   </main>
 
   <!-- Footer -->
@@ -104,9 +137,9 @@
     <div class="footer-content">
       <div class="footer-section redes-sociales">
         <h4>Redes Sociales</h4>
-        <a href="https://facebook.com/wow" target="_blank"><i class="fab fa-facebook-square"></i> Facebook</a>
-        <a href="https://instagram.com/wow" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://twitter.com/wow" target="_blank"><i class="fab fa-twitter-square"></i> Twitter</a>
+        <a href="#"><i class="fab fa-facebook-square"></i> Facebook</a>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
       </div>
       <div class="footer-section correo">
         <h4>Correo Electrónico</h4>

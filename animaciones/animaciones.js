@@ -1,14 +1,16 @@
-// Detecta cuando los elementos entran en pantalla y aplica animaciones
+
 document.addEventListener("DOMContentLoaded", () => {
-  const elements = document.querySelectorAll(".fade-up, .fade-down, .fade-left, .fade-right, .zoom-in");
+  const carousel = document.querySelector(".carousel-images");
+  const slides = carousel.querySelectorAll("img");
+  let index = 0;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  }, { threshold: 0.1 });
+  function showSlide(i) {
+    const offset = -i * 100; // Desplaza el contenedor
+    carousel.style.transform = `translateX(${offset}%)`;
+  }
 
-  elements.forEach(el => observer.observe(el));
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }, 4000); // Cambia cada 4 segundos
 });
