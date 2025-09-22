@@ -1,14 +1,14 @@
 /* ===========================
-   Carrusel tamaño moderado
+   Carrusel
 =========================== */
-.slider-section .slider {
-  height: 400px;
-  max-width: 900px;
-  margin: 20px auto 5px; /* menos espacio debajo */
-  border-radius: 12px;
+.slider-section {
+  max-width: 1000px;
+  height: 450px;
+  margin: 20px auto;
   overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
   position: relative;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* ✅ sombra elegante */
 }
 
 .slider img {
@@ -16,131 +16,187 @@
   height: 100%;
   object-fit: cover;
   position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
+  top:0; left:0;
+  opacity:0;
   transition: opacity 1s ease-in-out;
 }
 
-.slide.active {
-  opacity: 1;
-  position: relative;
-}
+.slide.active{ opacity:1; position:relative; }
 
-/* ===========================
-   Introducción (título + párrafo)
-=========================== */
+/* Introducción */
 .planes-intro {
-  text-align: center;
-  padding: 5px 20px 15px;
-  margin-top: -300px; /* acercar al carrusel */
+  text-align:center;
+  margin:40px auto;
+  max-width:900px;
 }
-
 .planes-intro h2 {
-  font-size: 3rem;
-  margin-bottom: 5px;
-  color: #004080; /* Azul */
+  font-size:3rem;
+  font-weight:900;
+  color:#004080;
+  margin-bottom:15px;
+  text-shadow:1px 1px 3px rgba(0,0,0,0.2);
 }
+.planes-intro p{ font-size:1.2rem; color:#333; line-height:1.5; }
 
-.planes-intro p {
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin: auto;
+/* Planes */
+.planes-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
+  max-width:1100px;
+  margin:30px auto 50px;
 }
-
-/* ===========================
-   Regiones (contenedor + tarjeta)
-=========================== */
-.regiones-container {
-  display: flex;
-  gap: 25px;
-  overflow-x: auto;
-  padding: 20px;
-  scroll-behavior: smooth;
-}
-
-.region-card {
-  flex: 0 0 auto; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.region {
-  flex: 0 0 120px;
-  height: 142px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-radius: 15px;
-  background-color: #004080;
-  color: white;
+.plan{
+  background-color:#f0f4fa;
+  border-radius:15px;
+  flex:1 1 280px;
+  padding:25px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+.plan:hover{
+  transform:translateY(-8px);
+  box-shadow:0 12px 30px rgba(0,0,0,0.35);
+}
+.plan h3{ color:#004080; font-size:1.8rem; margin-bottom:10px; }
+.plan p{ font-size:1rem; color:#333; line-height:1.5; }
+
+/* Beneficios */
+.beneficios{ text-align:center; padding:40px 20px; background:#f5f8ff; }
+.beneficios h2{ color:#004080; margin-bottom:30px; font-size:2.4rem; }
+.beneficios-grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:40px;
+}
+.beneficios-grid div{ max-width:220px; text-align:center; }
+.beneficios-grid i{ font-size:2rem; color:#004080; margin-bottom:10px; }
+.beneficios-grid h4{ margin:10px 0; font-size:1.2rem; }
+.beneficios-grid p{ font-size:1rem; color:#333; }
+
+/* Regiones */
+.regiones-bg{ background:#e0ecff; padding:30px 0; border-radius:20px; }
+.regiones-container{ display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin:0 auto; }
+.region-card{ display:flex; flex-direction:column; align-items:center; }
+.region{
+  width:140px; height:140px; background-color:#fff; color:#004080;
+  border-radius:15px; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  cursor:pointer; transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; box-shadow:0 5px 15px rgba(0,0,0,0.25);
+  margin-bottom:12px;
+}
+.region:hover{ transform:translateY(-10px); box-shadow:0 12px 25px rgba(0,0,0,0.35); background-color:#c5dbff; }
+.region-img{ width:100px; height:100px; object-fit:contain; margin-bottom:8px; }
+.regiones{ font-size:1.5rem; font-weight:700; text-align:center; }
+
+/* Provincias */
+.provincias-list{
+  display:flex; flex-wrap:wrap; justify-content:center; gap:12px;
+  max-height:0; opacity:0; overflow:hidden;
+  transition: max-height 0.6s ease, opacity 0.6s ease, transform 0.5s ease;
+  transform:translateY(-10px);
+}
+.provincias-list.visible{ max-height:400px; opacity:1; transform:translateY(0); }
+.provincia-bubble{
+  display:flex; align-items:center; gap:8px;
+  background:#f5f5f5; border:1px solid #ddd; border-radius:50px;
+  padding:10px 18px; font-size:1rem; font-weight:600; color:#333;
+  text-decoration:none; transition:all 0.3s ease-in-out; box-shadow:0 2px 5px rgba(0,0,0,0.15);
+}
+.provincia-bubble:hover{ background:#25D366; color:#fff; transform:scale(1.05); box-shadow:0 4px 12px rgba(0,0,0,0.25); }
+.provincia-bubble i{ color:#25D366; font-size:1.2rem; }
+.provincia-bubble:hover i{ color:#fff; }
+
+/* Conéctate con WOW */
+.connect-wow{
+  background: linear-gradient(135deg,#ff7f50,#ffb347);
+  color:#fff;
+  text-align:center;
+  padding:50px 20px;
+  border-radius:20px;
+  margin:40px auto;
+  max-width:1000px;
+}
+.connect-wow h2{ font-size:2.6rem; margin-bottom:20px; }
+.connect-wow p{ font-size:1.2rem; margin-bottom:25px; line-height:1.5; }
+.connect-buttons a{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:#25D366;
+  color:#fff;
+  font-size:1.2rem;
+  padding:12px 25px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+  transition:all 0.3s ease-in-out;
+}
+.connect-buttons a:hover{ background:#1ebe5d; transform:scale(1.05); }
+
+/* FAQ */
+.faq{
+  padding:50px 20px;
+  max-width:900px;
+  margin:auto;
+}
+.faq h2{ text-align:center; color:#004080; margin-bottom:50px; font-size:2.8rem; text-shadow:1px 1px 2px rgba(0,0,0,0.1); }
+.faq-item{
+  margin-bottom:15px;
+  background:#fff;
+  border-radius:20px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  cursor:pointer;
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
+  overflow:hidden;
+  position:relative;
+  padding:20px 25px;
+}
+.faq-item:hover{ transform:translateY(-5px); box-shadow:0 12px 30px rgba(0,0,0,0.15); }
+.faq-item h4{
+  font-size:1.4rem;
+  color:#004080;
+  margin:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.faq-item h4::after{
+  content:'+';
+  font-size:1.5rem;
+  transition: transform 0.3s ease;
+}
+.faq-item.active h4::after{
+  content:'-';
+  transform:rotate(180deg);
+}
+.faq-item p{
+  font-size:1rem;
+  color:#333;
+  line-height:1.5;
+  max-height:0;
+  opacity:0;
+  padding-top:0;
+  transition: all 0.5s ease;
+}
+.faq-item.active p{
+  max-height:500px;
+  opacity:1;
+  padding-top:15px;
 }
 
-.region:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-}
+/* Texto final */
+.planes-final{ text-align:center; padding:40px 20px; }
+.planes-final h2{ font-size:2.4rem; color:#004080; margin-bottom:15px; }
+.planes-final p{ font-size:1.1rem; color:#333; max-width:800px; margin:auto; line-height:1.5; }
 
-.region-img {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  margin-bottom: 10px;
-}
-
-/* ===========================
-   Provincias (lista + burbujas)
-=========================== */
-.provincias-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.6s ease, opacity 0.6s ease;
-}
-
-.provincias-list.visible {
-  max-height: 400px;
-  opacity: 1;
-}
-
-.provincia-bubble {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: #f5f5f5;
-  border: 1px solid #ddd;
-  border-radius: 50px;
-  padding: 8px 15px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #333;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
-}
-
-.provincia-bubble:hover {
-  background: #25D366; /* verde de WhatsApp */
-  color: #fff;
-  transform: scale(1.05);
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-}
-
-.provincia-bubble i {
-  color: #25D366;
-  font-size: 1.2rem;
-}
-
-.provincia-bubble:hover i {
-  color: #fff;
+/* Responsive */
+@media (max-width:768px){
+  .planes-container{ flex-direction:column; gap:20px; }
+  .region{ width:120px; height:120px; }
+  .region-img{ width:80px; height:80px; }
+  .planes-intro h2{ font-size:2.2rem; }
+  .planes-final h2{ font-size:2rem; }
+  .beneficios-grid{ flex-direction:column; gap:25px; }
 }

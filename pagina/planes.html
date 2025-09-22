@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script defer src="../funciones/main.js"></script>
   <script defer src="../animaciones/animaciones.js"></script>
-
 </head>
 <body>
   <header>
@@ -24,7 +23,6 @@
       <a href="planes.html">Planes</a>
       <a href="cobertura.html">Cobertura</a>
       <a href="contactos.html">Contacto</a>
-      <a href="promociones.html">Promociones</a>
     </nav>
   </header>
 
@@ -39,76 +37,160 @@
       </div>
     </section>
 
-    <!-- Título y párrafo -->
+    <!-- Introducción -->
     <section class="planes-intro fade-in">
       <h2>Nuestros Planes WOW</h2>
-      <p>
-        Escoge el plan que se adapte a tus necesidades. Contamos con planes para todo tipo de usuario.
-      </p>
+      <p>Escoge el plan que se adapte a tus necesidades. Contamos con planes para todo tipo de usuario.</p>
+    </section>
+
+    <!-- Planes destacados -->
+    <section class="planes-container fade-in">
+      <div class="plan">
+        <h3>Plan Básico</h3>
+        <p>Velocidad: 20 Mbps</p>
+        <p>Precio: $20/mes</p>
+        <a href="https://wa.me/593991234567?text=Hola%20quiero%20el%20Plan%20Básico" target="_blank" class="provincia-bubble">
+          <i class="fab fa-whatsapp"></i> Cotizar
+        </a>
+      </div>
+      <div class="plan">
+        <h3>Plan Avanzado</h3>
+        <p>Velocidad: 50 Mbps</p>
+        <p>Precio: $35/mes</p>
+        <a href="https://wa.me/593991234567?text=Hola%20quiero%20el%20Plan%20Avanzado" target="_blank" class="provincia-bubble">
+          <i class="fab fa-whatsapp"></i> Cotizar
+        </a>
+      </div>
+      <div class="plan">
+        <h3>Plan Premium</h3>
+        <p>Velocidad: 100 Mbps</p>
+        <p>Precio: $55/mes</p>
+        <a href="https://wa.me/593991234567?text=Hola%20quiero%20el%20Plan%20Premium" target="_blank" class="provincia-bubble">
+          <i class="fab fa-whatsapp"></i> Cotizar
+        </a>
+      </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="beneficios fade-in">
+      <h2>Beneficios de WOW</h2>
+      <div class="beneficios-grid">
+        <div>
+          <i class="fas fa-bolt"></i>
+          <h4>Internet ultrarrápido</h4>
+          <p>Conéctate sin interrupciones y navega al máximo, ideal para streaming y juegos online.</p>
+        </div>
+        <div>
+          <i class="fas fa-shield-alt"></i>
+          <h4>Seguridad garantizada</h4>
+          <p>Protege tus datos con nuestra infraestructura confiable y moderna.</p>
+        </div>
+        <div>
+          <i class="fas fa-headset"></i>
+          <h4>Soporte 24/7</h4>
+          <p>Nuestro equipo siempre está listo para ayudarte vía chat, WhatsApp o teléfono.</p>
+        </div>
+      </div>
     </section>
 
     <!-- Regiones con provincias -->
     <section id="regiones" class="regiones-section fade-in">
-      <h2 class="titulo-principal" style="font-size: 2rem; text-align:center; margin-bottom: 20px;">Dónde nos conectas</h2>
-      <div class="regiones-container">
-
-        <!-- Costa -->
-        <div class="region-card">
-          <div class="region" onclick="toggleProvincias('costa')">
-            <img src="../fotos/costa.png" alt="Costa" class="region-img">
-            <h3 class="regiones">Costa</h3>
+      <h2 class="titulo-principal">Dónde nos conectas</h2>
+      <div class="regiones-bg">
+        <div class="regiones-container">
+          <!-- Costa -->
+          <div class="region-card">
+            <div class="region" onclick="toggleProvincias('costa')">
+              <img src="../fotos/costa.png" alt="Costa" class="region-img">
+              <h3 class="regiones">Costa</h3>
+            </div>
+            <div id="costa" class="provincias-list">
+              <a href="https://wa.me/593991234567?text=Hola%20Guayas" target="_blank" class="provincia-bubble">
+                <i class="fab fa-whatsapp"></i> Guayas
+              </a>
+              <a href="https://wa.me/593991234567?text=Hola%20Manabí" target="_blank" class="provincia-bubble">
+                <i class="fab fa-whatsapp"></i> Manabí
+              </a>
+            </div>
           </div>
-          <div id="costa" class="provincias-list">
-            <a href="https://wa.me/593991234567?text=Hola%20Guayas" target="_blank" class="provincia-bubble">
-              <i class="fab fa-whatsapp"></i> Guayas
-            </a>
-            <a href="https://wa.me/593991234567?text=Hola%20Manabí" target="_blank" class="provincia-bubble">
-              <i class="fab fa-whatsapp"></i> Manabí
-            </a>
+          <!-- Sierra -->
+          <div class="region-card">
+            <div class="region" onclick="toggleProvincias('sierra')">
+              <img src="../fotos/sierra.png" alt="Sierra" class="region-img">
+              <h3 class="regiones">Sierra</h3>
+            </div>
+            <div id="sierra" class="provincias-list">
+              <a href="https://wa.me/593991234567?text=Hola%20Pichincha" target="_blank" class="provincia-bubble">
+                <i class="fab fa-whatsapp"></i> Pichincha
+              </a>
+              <a href="https://wa.me/593991234567?text=Hola%20Azuay" target="_blank" class="provincia-bubble">
+                <i class="fab fa-whatsapp"></i> Azuay
+              </a>
+            </div>
+          </div>
+          <!-- Oriente -->
+          <div class="region-card">
+            <div class="region" onclick="toggleProvincias('oriente')">
+              <img src="../fotos/oriente.png" alt="Oriente" class="region-img">
+              <h3 class="regiones">Oriente</h3>
+            </div>
+            <div id="oriente" class="provincias-list">
+              <a href="https://wa.me/593991234567?text=Hola%20Napo" target="_blank" class="provincia-bubble">
+                <i class="fab fa-whatsapp"></i> Napo
+              </a>
+              <a href="https://wa.me/593991234567?text=Hola%20Orellana" target="_blank" class="provincia-bubble">
+                <i class="fab fa-whatsapp"></i> Orellana
+              </a>
+            </div>
           </div>
         </div>
-
-        <!-- Sierra -->
-        <div class="region-card">
-          <div class="region" onclick="toggleProvincias('sierra')">
-            <img src="../fotos/sierra.png" alt="Sierra" class="region-img">
-            <h3 class="regiones">Sierra</h3>
-          </div>
-          <div id="sierra" class="provincias-list">
-            <a href="https://wa.me/593991234567?text=Hola%20Pichincha" target="_blank" class="provincia-bubble">
-              <i class="fab fa-whatsapp"></i> Pichincha
-            </a>
-            <a href="https://wa.me/593991234567?text=Hola%20Azuay" target="_blank" class="provincia-bubble">
-              <i class="fab fa-whatsapp"></i> Azuay
-            </a>
-          </div>
-        </div>
-
-        <!-- Oriente -->
-        <div class="region-card">
-          <div class="region" onclick="toggleProvincias('oriente')">
-            <img src="../fotos/oriente.png" alt="Oriente" class="region-img">
-            <h3 class="regiones">Oriente</h3>
-          </div>
-          <div id="oriente" class="provincias-list">
-            <a href="https://wa.me/593991234567?text=Hola%20Napo" target="_blank" class="provincia-bubble">
-              <i class="fab fa-whatsapp"></i> Napo
-            </a>
-            <a href="https://wa.me/593991234567?text=Hola%20Orellana" target="_blank" class="provincia-bubble">
-              <i class="fab fa-whatsapp"></i> Orellana
-            </a>
-          </div>
-        </div>
-
       </div>
     </section>
 
-    <!-- Título final y párrafo -->
-    <section class="planes-final fade-in" style="text-align:center; padding: 20px; margin-top: 10px;">
-      <h2 class="titulo-principal" style="font-size: 2rem; margin-bottom: 10px;">Conéctate con WOW</h2>
-      <p style="font-size: 1.1rem; max-width: 800px; margin: auto;">
-        Selecciona tu región y envíanos un mensaje por WhatsApp para más información sobre nuestros planes.
-      </p>
+    <!-- Preguntas Frecuentes -->
+    <section class="faq fade-in">
+      <h2>Preguntas frecuentes</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <i class="fas fa-question-circle"></i>
+          <div>
+            <h4>¿Qué velocidad real puedo esperar?</h4>
+            <p>Dependiendo de tu ubicación y el plan contratado, garantizamos un mínimo de velocidad que cumple con lo indicado en cada plan.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <i class="fas fa-question-circle"></i>
+          <div>
+            <h4>¿Necesito instalación especial?</h4>
+            <p>No. Nuestro equipo realiza la instalación completa sin que necesites conocimientos técnicos. Solo conecta y disfruta.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <i class="fas fa-question-circle"></i>
+          <div>
+            <h4>¿Puedo cambiar de plan fácilmente?</h4>
+            <p>Sí, puedes actualizar o cambiar tu plan desde nuestra página web o contactando a soporte sin contratos complicados.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <i class="fas fa-question-circle"></i>
+          <div>
+            <h4>¿Hay permanencia mínima?</h4>
+            <p>No. Puedes cancelar o cambiar tu plan cuando lo desees sin penalizaciones.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conéctate con WOW -->
+    <section class="planes-final fade-in connect-wow">
+      <h2>Conéctate con WOW</h2>
+      <p>Selecciona tu región y envíanos un mensaje por WhatsApp para más información sobre nuestros planes.</p>
+      <div class="connect-buttons">
+        <a href="https://wa.me/593991234567?text=Hola%20quiero%20información%20sobre%20los%20planes" target="_blank">
+          <i class="fab fa-whatsapp"></i> Chatea con nosotros
+        </a>
+      </div>
     </section>
   </main>
 
@@ -134,39 +216,28 @@
   </footer>
 
   <script>
-    // --- SLIDER AUTOMÁTICO ---
+    // Slider automático
     const slides = document.querySelectorAll('.slide');
     let currentIndex = 0;
+    function showSlide(index){ slides.forEach((slide,i)=>slide.classList.toggle('active',i===index)); }
+    function nextSlide(){ currentIndex=(currentIndex+1)%slides.length; showSlide(currentIndex); }
+    if(slides.length>0) setInterval(nextSlide,4000);
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-    }
-
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-    }
-
-    if (slides.length > 0) {
-      setInterval(nextSlide, 4000);
-      showSlide(currentIndex);
-    }
-
-    // --- REGIONES Y PROVINCIAS ---
-    function toggleProvincias(regionId) {
-      const todasListas = document.querySelectorAll('.provincias-list');
-      const listaSeleccionada = document.getElementById(regionId);
-
-      // Cierra todas las demás
-      todasListas.forEach(lista => {
-        if (lista !== listaSeleccionada) lista.classList.remove('visible');
-      });
-
-      // Alterna la lista seleccionada
+    // Toggle provincias
+    function toggleProvincias(regionId){
+      const todasListas=document.querySelectorAll('.provincias-list');
+      const listaSeleccionada=document.getElementById(regionId);
+      todasListas.forEach(lista=>{if(lista!==listaSeleccionada) lista.classList.remove('visible');});
       listaSeleccionada.classList.toggle('visible');
     }
   </script>
+  <script>
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+</script>
+
 </body>
 </html>
