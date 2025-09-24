@@ -42,16 +42,15 @@
     <!-- Texto introductorio -->
     <section class="intro-section">
       <h2>Nuestra Cobertura Nacional</h2>
-      <p>Conectamos a las principales regiones del Ecuador con la mejor tecnología en internet. 
-         Explora el mapa y descubre dónde llegamos.</p>
+      <p>Conectamos a las principales regiones del Ecuador con la mejor tecnología en internet. Explora el mapa y descubre dónde llegamos.</p>
     </section>
 
-    <!-- Regiones -->
-    <section id="regiones" class="fade-in">
-      <h1 style="text-align:center; margin-bottom: 15px; color: #004080;">Regiones Disponibles</h1>
+    <!-- Regiones con fondo blanco azulado -->
+    <section class="regiones-bg fade-in">
+      <h2 style="text-align:center; margin-bottom: 25px; color:#004080;">Regiones Disponibles</h2>
       <div class="regiones-container">
 
-        <!-- Ejemplo Costa -->
+        <!-- Costa -->
         <div class="region-card">
           <div class="region" onclick="toggleProvincias('costa')">
             <img src="../fotos/costa.png" alt="Costa" class="region-img">
@@ -67,7 +66,7 @@
           </div>
         </div>
 
-        <!-- Ejemplo Sierra -->
+        <!-- Sierra -->
         <div class="region-card">
           <div class="region" onclick="toggleProvincias('sierra')">
             <img src="../fotos/sierra.png" alt="Sierra" class="region-img">
@@ -83,7 +82,7 @@
           </div>
         </div>
 
-        <!-- Ejemplo Oriente -->
+        <!-- Oriente -->
         <div class="region-card">
           <div class="region" onclick="toggleProvincias('oriente')">
             <img src="../fotos/oriente.png" alt="Oriente" class="region-img">
@@ -99,10 +98,32 @@
       </div>
     </section>
 
+    <!-- Por qué elegir nuestra cobertura -->
+    <section class="beneficios" style="margin-top:40px;">
+      <h2 style="color:#004080; margin-bottom:30px;">¿Por qué elegir nuestra cobertura?</h2>
+      <div class="beneficios-grid">
+        <div>
+          <i class="fas fa-bolt"></i>
+          <h4>Alta velocidad</h4>
+          <p>Disfruta de conexiones estables y rápidas en todas las regiones cubiertas.</p>
+        </div>
+        <div>
+          <i class="fas fa-wifi"></i>
+          <h4>Conexión confiable</h4>
+          <p>Conectividad que no te deja desconectado en momentos importantes.</p>
+        </div>
+        <div>
+          <i class="fas fa-network-wired"></i>
+          <h4>Infraestructura moderna</h4>
+          <p>Redes actualizadas para ofrecerte el mejor servicio de internet.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Mapa -->
-    <section id="mapa">
-      <h1 style="text-align:center; margin-top: 20px; color: #004080; font-size: 3rem;">Mapa de Cobertura</h1>
-      <p style="text-align:center; color:#555;">Selecciona tu provincia o navega en el mapa para descubrir si llegamos a tu localidad.</p>
+    <section id="mapa" style="margin-top:40px; margin-bottom:40px;">
+      <h2 style="text-align:center; color:#004080; margin-bottom:15px;">Mapa de Cobertura</h2>
+      <p style="text-align:center; color:#555; margin-bottom:20px;">Explora el mapa y descubre si llegamos a tu localidad.</p>
       <div id="map"></div>
     </section>
   </main>
@@ -138,8 +159,11 @@
     }
     setInterval(() => moveSlide(1), 5000);
 
-    // Mapa Leaflet
-    var map = L.map('map').setView([-0.180653, -78.467838], 7);
+    // Mapa Leaflet sin zoom con scroll
+    var map = L.map('map', {
+      scrollWheelZoom: false
+    }).setView([-0.180653, -78.467838], 7);
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19
     }).addTo(map);
@@ -158,11 +182,9 @@
     function toggleProvincias(regionId) {
       const todasListas = document.querySelectorAll('.provincias-list');
       const listaSeleccionada = document.getElementById(regionId);
-
       todasListas.forEach(lista => {
         if (lista !== listaSeleccionada) lista.classList.remove('visible');
       });
-
       listaSeleccionada.classList.toggle('visible');
     }
   </script>

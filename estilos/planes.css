@@ -23,7 +23,9 @@
 
 .slide.active{ opacity:1; position:relative; }
 
-/* Introducción */
+/* ===========================
+   Introducción
+=========================== */
 .planes-intro {
   text-align:center;
   margin:40px auto;
@@ -38,7 +40,9 @@
 }
 .planes-intro p{ font-size:1.2rem; color:#333; line-height:1.5; }
 
-/* Planes */
+/* ===========================
+   Planes
+=========================== */
 .planes-container{
   display:flex;
   flex-wrap:wrap;
@@ -62,7 +66,9 @@
 .plan h3{ color:#004080; font-size:1.8rem; margin-bottom:10px; }
 .plan p{ font-size:1rem; color:#333; line-height:1.5; }
 
-/* Beneficios */
+/* ===========================
+   Beneficios
+=========================== */
 .beneficios{ text-align:center; padding:40px 20px; background:#f5f8ff; }
 .beneficios h2{ color:#004080; margin-bottom:30px; font-size:2.4rem; }
 .beneficios-grid{
@@ -76,14 +82,29 @@
 .beneficios-grid h4{ margin:10px 0; font-size:1.2rem; }
 .beneficios-grid p{ font-size:1rem; color:#333; }
 
-/* Regiones */
-.regiones-bg{ background:#e0ecff; padding:30px 0; border-radius:20px; }
-.regiones-container{ display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin:0 auto; }
+/* ===========================
+   Regiones
+=========================== */
+.regiones-bg{
+  background:#e0ecff;
+  padding:40px 30px;
+  border-radius:20px;
+  margin:60px auto;
+  max-width:1100px; /* centrado y no ocupa todo */
+  box-shadow:0 6px 18px rgba(0,0,0,0.15);
+}
+.regiones-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:30px;
+}
 .region-card{ display:flex; flex-direction:column; align-items:center; }
 .region{
   width:140px; height:140px; background-color:#fff; color:#004080;
   border-radius:15px; display:flex; flex-direction:column; align-items:center; justify-content:center;
-  cursor:pointer; transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; box-shadow:0 5px 15px rgba(0,0,0,0.25);
+  cursor:pointer; transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow:0 5px 15px rgba(0,0,0,0.25);
   margin-bottom:12px;
 }
 .region:hover{ transform:translateY(-10px); box-shadow:0 12px 25px rgba(0,0,0,0.35); background-color:#c5dbff; }
@@ -108,15 +129,18 @@
 .provincia-bubble i{ color:#25D366; font-size:1.2rem; }
 .provincia-bubble:hover i{ color:#fff; }
 
-/* Conéctate con WOW */
+/* ===========================
+   Conéctate con WOW
+=========================== */
 .connect-wow{
   background: linear-gradient(135deg,#ff7f50,#ffb347);
   color:#fff;
   text-align:center;
-  padding:50px 20px;
+  padding:60px 30px;
   border-radius:20px;
-  margin:40px auto;
-  max-width:1000px;
+  margin:60px auto 100px auto; /* separación de arriba y del footer */
+  max-width:1100px; /* centrado */
+  box-shadow:0 6px 18px rgba(0,0,0,0.2);
 }
 .connect-wow h2{ font-size:2.6rem; margin-bottom:20px; }
 .connect-wow p{ font-size:1.2rem; margin-bottom:25px; line-height:1.5; }
@@ -135,7 +159,9 @@
 }
 .connect-buttons a:hover{ background:#1ebe5d; transform:scale(1.05); }
 
-/* FAQ */
+/* ===========================
+   FAQ
+=========================== */
 .faq{
   padding:50px 20px;
   max-width:900px;
@@ -163,13 +189,10 @@
   align-items:center;
 }
 .faq-item h4::after{
-  content:'+';
-  font-size:1.5rem;
-  transition: transform 0.3s ease;
+  content:'+'; font-size:1.5rem; transition: transform 0.3s ease;
 }
 .faq-item.active h4::after{
-  content:'-';
-  transform:rotate(180deg);
+  content:'-'; transform:rotate(180deg);
 }
 .faq-item p{
   font-size:1rem;
@@ -186,12 +209,16 @@
   padding-top:15px;
 }
 
-/* Texto final */
+/* ===========================
+   Texto final
+=========================== */
 .planes-final{ text-align:center; padding:40px 20px; }
 .planes-final h2{ font-size:2.4rem; color:#004080; margin-bottom:15px; }
 .planes-final p{ font-size:1.1rem; color:#333; max-width:800px; margin:auto; line-height:1.5; }
 
-/* Responsive */
+/* ===========================
+   Responsive
+=========================== */
 @media (max-width:768px){
   .planes-container{ flex-direction:column; gap:20px; }
   .region{ width:120px; height:120px; }
