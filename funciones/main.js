@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('nav');
 
-  if (menuToggle) {
+  if (menuToggle && nav) {
     menuToggle.addEventListener('click', () => {
       nav.classList.toggle('open');
       menuToggle.classList.toggle('open');
@@ -26,27 +26,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (slides.length > 0) {
-    setInterval(nextSlide, 5000); // Cambia cada 5 segundos
+    setInterval(nextSlide, 5000);
     showSlide(currentIndex);
   }
 
-  // --- ANIMACIÓN FADE-IN AL HACER SCROLL ---
+  // --- ANIMACIÓN FADE-IN ---
   const faders = document.querySelectorAll('.fade-in');
 
   function checkFade() {
     const triggerBottom = window.innerHeight * 0.85;
-
     faders.forEach(fader => {
       const top = fader.getBoundingClientRect().top;
-
-      if (top < triggerBottom) {
-        fader.classList.add('visible');
-      }
+      if (top < triggerBottom) fader.classList.add('visible');
     });
   }
 
   window.addEventListener('scroll', checkFade);
-  checkFade(); // activa en carga inicial también
+  checkFade();
 });
 
 // --- REGIONES Y PROVINCIAS ---
@@ -54,44 +50,28 @@ function toggleProvincias(regionId) {
   const todasListas = document.querySelectorAll('.provincias-list');
   const listaSeleccionada = document.getElementById(regionId);
 
-  // Cierra todas las demás
   todasListas.forEach(lista => {
-    if (lista !== listaSeleccionada) {
-      lista.classList.remove('visible');
-    }
+    if (lista !== listaSeleccionada) lista.classList.remove('visible');
   });
 
-  // Alterna la seleccionada (abre/cierra)
-  listaSeleccionada.classList.toggle('visible');
+  if (listaSeleccionada) listaSeleccionada.classList.toggle('visible');
 }
 
-
-// Funciones Google Maps
-
+// --- GOOGLE MAPS Y TARJETAS ---
 document.addEventListener("DOMContentLoaded", () => {
-  // Seleccionamos todas las tarjetas
   const regionCards = document.querySelectorAll(".region-card");
   const mapas = document.querySelectorAll(".mapa-container");
 
-  // Función para mostrar un mapa y ocultar los demás
   function mostrarMapa(region) {
     mapas.forEach(mapa => {
-      if (mapa.id === "map-" + region) {
-        mapa.classList.add("activo");
-      } else {
-        mapa.classList.remove("activo");
-      }
+      mapa.classList.toggle("activo", mapa.id === "map-" + region);
     });
   }
 
-  // Evento click para cada tarjeta
   regionCards.forEach(card => {
     card.addEventListener("click", () => {
-      const region = card.getAttribute("data-region");
+      const region = card.dataset.region;
       mostrarMapa(region);
     });
   });
 });
-
-//Google Maps
-
