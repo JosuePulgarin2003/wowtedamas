@@ -4,23 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WOW Internet</title>
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="../estilos/styles.css" />
   <link rel="stylesheet" href="../estilos/index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Scripts -->
   <script defer src="../funciones/main.js"></script>
   <script defer src="../animaciones/animaciones.js"></script>
 </head>
 <body>
   <!-- Header / Navbar -->
   <header>
-    <h1>WOW</h1>
+    <div class="logo">
+      <a href="index.html">
+        <img src="https://wowtedamas.com/wp-content/uploads/2025/02/cropped-logo-sin-antena-transparente.png" alt="WOW Internet Logo" class="logo-img">
+      </a>
+    </div>
+
     <button class="menu-toggle" aria-label="Abrir menú">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </button>
+
     <nav>
-      <a href="index.html">Inicio</a>
+      <a href="index.html" class="active">Inicio</a>
       <a href="planes.html">Planes</a>
       <a href="cobertura.html">Cobertura</a>
       <a href="contactos.html">Contacto</a>
@@ -128,7 +138,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- Footer -->
