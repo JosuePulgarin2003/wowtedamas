@@ -52,7 +52,7 @@
   margin:30px auto 50px;
 }
 .plan{
-  background-color:#f0f4fa;
+  background-color:#f9faf0;
   border-radius:15px;
   flex:1 1 280px;
   padding:25px;
@@ -284,7 +284,7 @@
 =========================== */
 .planes-final{ text-align:center; padding:40px 20px; }
 .planes-final h2{ font-size:2.4rem; color:#004080; margin-bottom:15px; }
-.planes-final p{ font-size:1.1rem; color:#333; max-width:800px; margin:auto; line-height:1.5; }
+.planes-final p{ font-size:1.1rem; color:#333; max-width:800px; margin:auto; line-height:2.5; }
 
 /* ===========================
    Responsive
