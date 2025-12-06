@@ -2,48 +2,13 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
+  /* Fondo degradado naranja -> amarillo suave (difuminado) */
+  background: linear-gradient(135deg, #ff8a00 0%, #ffb347 40%, #ffd54a 75%, #fff9e6 100%);
+  /* superponer una ligera textura sutil (opcional, usa rgba para no tapar el degradado) */
+  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 16px 16px, cover;
+  background-attachment: fixed;
   color: #333;
-}
-
-/* ==== BOTONES UNIFICADOS (BASE) ==== */
-button,
-.btn {
-  padding: 12px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 600;
-  border: none;
-  transition: 0.3s ease;
-  font-family: inherit;
-}
-
-/* Botón principal (azul) */
-.btn-primary {
-  background-color: #004080;
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: #002f63;
-}
-
-/* Botón secundario (claro) */
-.btn-light {
-  background-color: #f1f1f1;
-  color: #333;
-}
-
-.btn-light:hover {
-  background-color: #ddd;
-}
-
-/* Enlaces estilo botón */
-a.btn,
-a.btn-primary,
-a.btn-light {
-  display: inline-block;
-  text-decoration: none;
 }
 
 /* ==== HEADER / NAVBAR ==== */
@@ -504,3 +469,4 @@ footer {
 .slider .slide.active {
   opacity: 1;
 }
+ 
