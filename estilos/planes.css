@@ -16,89 +16,136 @@
   height: 100%;
   object-fit: cover;
   position: absolute;
-  top:0; left:0;
-  opacity:0;
+  top: 0;
+  left: 0;
+  opacity: 0;
   transition: opacity 1s ease-in-out;
 }
 
-.slide.active{ opacity:1; position:relative; }
+.slide.active {
+  opacity: 1;
+  position: relative;
+}
 
 /* ===========================
    Introducción
 =========================== */
 .planes-intro {
-  text-align:center;
-  margin:40px auto;
-  max-width:900px;
+  text-align: center;
+  margin: 40px auto;
+  max-width: 900px;
 }
+
 .planes-intro h2 {
-  font-size:3rem;
-  font-weight:900;
-  color:#004080;
-  margin-bottom:15px;
-  text-shadow:1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 3rem;
+  font-weight: 900;
+  color: #004080;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
-.planes-intro p{ font-size:1.2rem; color:#333; line-height:1.5; }
+
+.planes-intro p {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.5;
+}
 
 /* ===========================
    Planes
 =========================== */
-.planes-container{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:25px;
-  max-width:1100px;
-  margin:30px auto 50px;
+.planes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  max-width: 1100px;
+  margin: 30px auto 50px;
 }
-.plan{
-  background-color:#f9faf0;
-  border-radius:15px;
-  flex:1 1 280px;
-  padding:25px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.25);
+
+.plan {
+  background-color: #f9faf0;
+  border-radius: 15px;
+  flex: 1 1 280px;
+  padding: 25px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.plan:hover{
-  transform:translateY(-8px);
-  box-shadow:0 12px 30px rgba(0,0,0,0.35);
+
+.plan:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
 }
-.plan h3{ color:#004080; font-size:1.8rem; margin-bottom:10px; }
-.plan p{ font-size:1rem; color:#333; line-height:1.5; }
+
+.plan h3 {
+  color: #004080;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.plan p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
 
 /* ===========================
    Beneficios
 =========================== */
-.beneficios{ text-align:center; padding:40px 20px; background:#f5f8ff; }
-.beneficios h2{ color:#004080; margin-bottom:30px; font-size:2.4rem; }
-.beneficios-grid{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:40px;
+.beneficios {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f5f8ff;
 }
-.beneficios-grid div{ max-width:220px; text-align:center; }
-.beneficios-grid i{ font-size:2rem; color:#004080; margin-bottom:10px; }
-.beneficios-grid h4{ margin:10px 0; font-size:1.2rem; }
-.beneficios-grid p{ font-size:1rem; color:#333; }
+
+.beneficios h2 {
+  color: #004080;
+  margin-bottom: 30px;
+  font-size: 2.4rem;
+}
+
+.beneficios-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.beneficios-grid div {
+  max-width: 220px;
+  text-align: center;
+}
+
+.beneficios-grid i {
+  font-size: 2rem;
+  color: #004080;
+  margin-bottom: 10px;
+}
+
+.beneficios-grid h4 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.beneficios-grid p {
+  font-size: 1rem;
+  color: #333;
+}
 
 /* ===========================
    Regiones
 =========================== */
-/* Fondo azul que se extiende de extremo a extremo */
 .regiones-bg {
   background-color: #e0ecff;
-  width: 100vw; /* ocupar toda la ventana */
+  width: 100vw;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  padding: 60px 0; /* separación vertical */
+  padding: 60px 0;
   box-sizing: border-box;
 }
 
-/* Contenido centrado */
 .regiones-container {
   display: flex;
   flex-wrap: wrap;
@@ -106,7 +153,7 @@
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px; /* separación lateral */
+  padding: 0 20px;
 }
 
 .region-card {
@@ -118,7 +165,7 @@
 .region {
   width: 140px;
   height: 140px;
-  background-color: #fff; /* recuadro individual */
+  background-color: #fff;
   color: #004080;
   border-radius: 15px;
   display: flex;
@@ -150,7 +197,9 @@
   text-align: center;
 }
 
-/* Provincias desplegables */
+/* ===========================
+   Provincias desplegables
+=========================== */
 .provincias-list {
   display: flex;
   flex-wrap: wrap;
@@ -159,8 +208,8 @@
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.6s ease, opacity 0.6s ease, transform 0.5s ease;
   transform: translateY(-10px);
+  transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
 }
 
 .provincias-list.visible {
@@ -197,103 +246,174 @@
   font-size: 1.2rem;
 }
 
-.provincia-bubble:hover i { color: #fff; }
+.provincia-bubble:hover i {
+  color: #fff;
+}
 
 /* ===========================
    Conéctate con WOW
 =========================== */
-.connect-wow{
-  background: linear-gradient(135deg,#ff7f50,#ffb347);
-  color:#fff;
-  text-align:center;
-  padding:60px 30px;
-  border-radius:20px;
-  margin:60px auto 100px auto; /* separación de arriba y del footer */
-  max-width:1100px; /* centrado */
-  box-shadow:0 6px 18px rgba(0,0,0,0.2);
+.connect-wow {
+  background: linear-gradient(135deg, #ff7f50, #ffb347);
+  color: #fff;
+  text-align: center;
+  padding: 60px 30px;
+  border-radius: 20px;
+  margin: 60px auto 100px auto;
+  max-width: 1100px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
-.connect-wow h2{ font-size:2.6rem; margin-bottom:20px; }
-.connect-wow p{ font-size:1.2rem; margin-bottom:25px; line-height:1.5; }
-.connect-buttons a{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  background:#25D366;
-  color:#fff;
-  font-size:1.2rem;
-  padding:12px 25px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:600;
-  transition:all 0.3s ease-in-out;
+
+.connect-wow h2 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
 }
-.connect-buttons a:hover{ background:#1ebe5d; transform:scale(1.05); }
+
+.connect-wow p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.connect-buttons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.connect-buttons a:hover {
+  background: #1ebe5d;
+  transform: scale(1.05);
+}
 
 /* ===========================
    FAQ
 =========================== */
-.faq{
-  padding:50px 20px;
-  max-width:900px;
-  margin:auto;
+.faq {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
 }
-.faq h2{ text-align:center; color:#004080; margin-bottom:50px; font-size:2.8rem; text-shadow:1px 1px 2px rgba(0,0,0,0.1); }
-.faq-item{
-  margin-bottom:15px;
-  background:#fff;
-  border-radius:20px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.1);
-  cursor:pointer;
-  transition:transform 0.3s ease, box-shadow 0.3s ease;
-  overflow:hidden;
-  position:relative;
-  padding:20px 25px;
+
+.faq h2 {
+  text-align: center;
+  color: #004080;
+  margin-bottom: 50px;
+  font-size: 2.8rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
-.faq-item:hover{ transform:translateY(-5px); box-shadow:0 12px 30px rgba(0,0,0,0.15); }
-.faq-item h4{
-  font-size:1.4rem;
-  color:#004080;
-  margin:0;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+
+.faq-item {
+  margin-bottom: 15px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  padding: 20px 25px;
 }
-.faq-item h4::after{
-  content:'+'; font-size:1.5rem; transition: transform 0.3s ease;
+
+.faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
-.faq-item.active h4::after{
-  content:'-'; transform:rotate(180deg);
+
+.faq-item h4 {
+  font-size: 1.4rem;
+  color: #004080;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.faq-item p{
-  font-size:1rem;
-  color:#333;
-  line-height:1.5;
-  max-height:0;
-  opacity:0;
-  padding-top:0;
+
+.faq-item h4::after {
+  content: '+';
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active h4::after {
+  content: '-';
+  transform: rotate(180deg);
+}
+
+.faq-item p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
   transition: all 0.5s ease;
 }
-.faq-item.active p{
-  max-height:500px;
-  opacity:1;
-  padding-top:15px;
+
+.faq-item.active p {
+  max-height: 500px;
+  opacity: 1;
+  padding-top: 15px;
 }
 
 /* ===========================
    Texto final
 =========================== */
-.planes-final{ text-align:center; padding:40px 20px; }
-.planes-final h2{ font-size:2.4rem; color:#004080; margin-bottom:15px; }
-.planes-final p{ font-size:1.1rem; color:#333; max-width:800px; margin:auto; line-height:2.5; }
+.planes-final {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.planes-final h2 {
+  font-size: 2.4rem;
+  color: #004080;
+  margin-bottom: 15px;
+}
+
+.planes-final p {
+  font-size: 1.1rem;
+  color: #333;
+  max-width: 800px;
+  margin: auto;
+  line-height: 2.5;
+}
 
 /* ===========================
    Responsive
 =========================== */
-@media (max-width:768px){
-  .planes-container{ flex-direction:column; gap:20px; }
-  .region{ width:120px; height:120px; }
-  .region-img{ width:80px; height:80px; }
-  .planes-intro h2{ font-size:2.2rem; }
-  .planes-final h2{ font-size:2rem; }
-  .beneficios-grid{ flex-direction:column; gap:25px; }
+@media (max-width: 768px) {
+  .planes-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .region {
+    width: 120px;
+    height: 120px;
+  }
+
+  .region-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .planes-intro h2 {
+    font-size: 2.2rem;
+  }
+
+  .planes-final h2 {
+    font-size: 2rem;
+  }
+
+  .beneficios-grid {
+    flex-direction: column;
+    gap: 25px;
+  }
 }

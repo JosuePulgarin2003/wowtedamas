@@ -1,4 +1,6 @@
+// main.js
 document.addEventListener('DOMContentLoaded', () => {
+
   // --- MENU RESPONSIVE ---
   const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('nav');
@@ -10,39 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- SLIDER AUTOMÁTICO ---
-  const slides = document.querySelectorAll('.slide');
-  let currentIndex = 0;
-
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === index);
-    });
-  }
-
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
-  }
-
-  if (slides.length > 0) {
-    setInterval(nextSlide, 5000);
-    showSlide(currentIndex);
-  }
-
   // --- ANIMACIÓN FADE-IN ---
   const faders = document.querySelectorAll('.fade-in');
 
-  function checkFade() {
-    const triggerBottom = window.innerHeight * 0.85;
-    faders.forEach(fader => {
-      const top = fader.getBoundingClientRect().top;
-      if (top < triggerBottom) fader.classList.add('visible');
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
     });
-  }
+  }, { threshold: 0.15 });
 
-  window.addEventListener('scroll', checkFade);
-  checkFade();
+  faders.forEach(f => fadeObserver.observe(f));
 });
 
 // --- REGIONES Y PROVINCIAS ---
@@ -70,8 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   regionCards.forEach(card => {
     card.addEventListener("click", () => {
-      const region = card.dataset.region;
-      mostrarMapa(region);
+      mostrarMapa(card.dataset.region);
     });
   });
 });

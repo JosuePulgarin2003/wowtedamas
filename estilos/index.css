@@ -1,4 +1,6 @@
-/* ===== CARRUSEL ===== */
+/* ============================
+   CARRUSEL
+============================ */
 .carousel {
   width: 90%;
   max-width: 900px;
@@ -14,7 +16,7 @@
   display: flex;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out; /* Línea corregida */
 }
 
 .carousel-images img {
@@ -24,7 +26,10 @@
   flex-shrink: 0;
 }
 
-/* ===== QUIÉNES SOMOS ===== */
+
+/* ============================
+   QUIÉNES SOMOS
+============================ */
 .quienes-somos {
   text-align: center;
   padding: 30px 20px;
@@ -43,10 +48,13 @@
   color: #333;
 }
 
-/* ===== NUESTROS PLANES ===== */
+
+/* ============================
+   NUESTROS PLANES
+============================ */
 .planes-section {
   padding: 30px 20px;
-  background-color: #f0f4f8; /* color blanco azulado */
+  background-color: #f0f4f8;
   color: #333;
 }
 
@@ -57,18 +65,17 @@
   margin-bottom: 25px;
 }
 
-/* ===== NUESTROS PLANES ===== */
 .planes-container {
   display: flex;
-  gap: 25px; /* un poco más de espacio */
+  gap: 25px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .plan {
   background-color: #f9faf0;
-  padding: 25px; /* aumenta un poco el padding */
-  flex: 1 1 300px; /* ahora mínimo 300px, antes 250px */
+  padding: 25px;
+  flex: 1 1 300px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -89,7 +96,10 @@
   color: #333;
 }
 
-/* ===== PROMOCIONES ===== */
+
+/* ============================
+   PROMOCIONES
+============================ */
 .promo-intro {
   text-align: center;
   padding: 30px 20px;
@@ -158,7 +168,10 @@
   background: #003366;
 }
 
-/* ===== ANIMACIONES ===== */
+
+/* ============================
+   ANIMACIONES
+============================ */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -171,17 +184,21 @@
 }
 
 
-/* ==== SECCIÓN POR QUÉ ELEGIRNOS Y MEJOR OPCIÓN ==== */
-.por-que-elegir, .mejor-opcion {
+/* ============================
+   POR QUÉ ELEGIRNOS / MEJOR OPCIÓN
+============================ */
+.por-que-elegir,
+.mejor-opcion {
   padding: 40px 20px;
-  background-color: #f4f6fa; /* Fondo suave */
+  background-color: #f4f6fa;
   max-width: 1100px;
   margin: 40px auto;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-.por-que-elegir h2, .mejor-opcion h2 {
+.por-que-elegir h2,
+.mejor-opcion h2 {
   text-align: center;
   font-size: 2.5rem;
   color: #004080;
@@ -190,7 +207,8 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
 }
 
-.por-que-elegir p, .mejor-opcion p {
+.por-que-elegir p,
+.mejor-opcion p {
   font-size: 1.1rem;
   color: #333;
   max-width: 900px;
@@ -199,15 +217,17 @@
   text-align: center;
 }
 
-/* Contenedores de beneficios/ventajas */
-.ventajas-container, .beneficios-container {
+/* Contenedores */
+.ventajas-container,
+.beneficios-container {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
   justify-content: center;
 }
 
-.ventaja, .beneficio {
+.ventaja,
+.beneficio {
   background-color: #ffffff;
   flex: 0 0 280px;
   padding: 25px;
@@ -217,34 +237,38 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.ventaja:hover, .beneficio:hover {
+.ventaja:hover,
+.beneficio:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 25px rgba(0,114,255,0.15);
 }
 
-.ventaja i, .beneficio i {
+.ventaja i,
+.beneficio i {
   color: #0072ff;
   margin-bottom: 15px;
 }
 
-.ventaja h3, .beneficio h3 {
+.ventaja h3,
+.beneficio h3 {
   font-size: 1.3rem;
   color: #004080;
   margin-bottom: 10px;
 }
 
-.ventaja p, .beneficio p {
+.ventaja p,
+.beneficio p {
   font-size: 1rem;
   color: #555;
   line-height: 1.5;
 }
 
-/* Mejor Opción: destacar párrafos importantes */
+/* Párrafos especiales en Mejor Opción */
 .mejor-opcion p {
   font-size: 1.15rem;
   font-weight: 500;
   color: #222;
-  background-color: #e6f0ff; /* Fondo azul claro */
+  background-color: #e6f0ff;
   padding: 15px 20px;
   border-left: 5px solid #004080;
   border-radius: 8px;

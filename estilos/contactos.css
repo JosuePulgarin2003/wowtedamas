@@ -8,18 +8,19 @@
   height: 400px;
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.25);
   position: relative;
 }
 
 .carousel-images {
   display: flex;
+  height: 100%;
   transition: transform 0.6s ease-in-out;
 }
 
 .carousel-images img {
   width: 100%;
-  height: 280px;
+  height: 100%; /* AHORA el carrusel ocupa bien su altura */
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -60,7 +61,7 @@
 }
 
 .contact-card {
-  background-color: #fff; /* ahora blanco */
+  background-color: #fff;
   color: #004080;
   border-radius: 15px;
   padding: 25px;
@@ -72,13 +73,13 @@
 
 .contact-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
 
 .contact-card i {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #25D366; /* WhatsApp verde */
+  color: #25D366;
 }
 
 .contact-card h3 {
@@ -217,5 +218,9 @@
 
   .contact-form-section {
     padding: 40px 15px;
+  }
+
+  .carousel {
+    height: 280px; /* Carrusel más razonable para celular */
   }
 }
