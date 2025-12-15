@@ -20,7 +20,7 @@
 
 .carousel-images img {
   width: 100%;
-  height: 100%; /* AHORA el carrusel ocupa bien su altura */
+  height: 100%;
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -61,19 +61,23 @@
 }
 
 .contact-card {
-  background-color: #fff;
+  /* === CAMBIO AÑADIDO: Recubrimiento traslúcido === */
+  background: rgba(255, 255, 255, 0.33); /* Blanco traslúcido */
+  backdrop-filter: blur(12px);           /* EFECTO GLASS */
+  -webkit-backdrop-filter: blur(12px);
+
   color: #004080;
   border-radius: 15px;
   padding: 25px;
   width: 230px;
   text-align: center;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.30);
 }
 
 .contact-card i {
@@ -108,7 +112,6 @@
   transform: scale(1.05);
 }
 
-/* Mantener correo blanco incluso después de hacer clic */
 .contact-card a {
   color: #004080;
   text-decoration: none;
@@ -221,6 +224,6 @@
   }
 
   .carousel {
-    height: 280px; /* Carrusel más razonable para celular */
+    height: 280px;
   }
 }
